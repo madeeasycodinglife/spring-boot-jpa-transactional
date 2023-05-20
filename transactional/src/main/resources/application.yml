@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: USER-SERVICES
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/transactional
+    username: user
+    password: user
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        generate_statistics: true
+        use_sql_comments: true
+        type: trace
+    generate-ddl: true
+
+  servlet:
+    multipart:
+      enabled: 'true'
+      fileSizeThreshold: 2KB #after the fileSizeThreshold size file will be saved
+      maxFileSize: 800MB
+      maxRequestSize: 800MB
+
+
+
+
+
+
+#spring:
+#  datasource:
+#    url: jdbc:h2:~/transactions
+#    driver-class-name: org.h2.Driver
+#    username: pabitra
+#    password:
+#  output:
+#    ansi:
+#      enabled: always
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: create-drop
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+#        generate_statistics: true
+#        use_sql_comments: true
+#        type: trace
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#      settings:
+#        web-allow-others: true
+#logging:
+#  level:
+#    org.springframework.orm.jpa: DEBUG
+#    org.springframework.transaction: DEBUG
